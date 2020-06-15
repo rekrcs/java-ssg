@@ -1,3 +1,21 @@
+// article list
+// article write
+// article modify
+// article delete
+// article detail
+// article createBoard
+// article deleteBoard
+// article listBoard
+// article changeBoard
+//
+// member logout
+// member login
+// member whoami
+// member  join
+//
+// build site
+// build startAutoSite
+// build stopAutoSite
 
 //조장 메세지
 import java.io.BufferedOutputStream;
