@@ -1,0 +1,29 @@
+[33mcommit dc1eab189cbb03245f1388efda6ac534dc30bdb1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: rekrcs <rekrcs@gmail.com>
+Date:   Fri Jun 12 12:41:50 2020 +0900
+
+    메인 자바 첫줄 추가
+
+[33mcommit cfa9d1c933ccd68a70c84d83c210dcbec411c0c6[m
+Author: rekrcs <rekrcs@gmail.com>
+Date:   Fri Jun 12 12:32:08 2020 +0900
+
+    체크아웃 연습
+
+[33mcommit 15a163ba9da7f18e747731f668cf2ea9918e30b0[m
+Author: duzzy1202 <duzzy1202@gmail.com>
+Date:   Fri Jun 12 12:22:40 2020 +0900
+
+    아바밥바바 추가
+
+[33mcommit 93ebd3f6f9ab1061701887c835240d3faa7e7bc9[m
+Author: rekrcs <rekrcs@gmail.com>
+Date:   Fri Jun 12 12:17:09 2020 +0900
+
+    화이팅 메세지추가
+
+[33mcommit 5a6ed26c0fc50dd5ffa6f818481bb1084f357c03[m
+Author: rekrcs <rekrcs@gmail.com>
+Date:   Fri Jun 12 11:04:54 2020 +0900
+
+    프로젝트 생성

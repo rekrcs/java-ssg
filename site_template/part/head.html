@@ -4,5 +4,306 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   <style>
+
+
+ body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+body, ul, li {
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.menu-1 {
+  text-align: center;
+  margin-top: 15px;
+}
+.menu-1 ul {
+  background-color: #efefef;
+}
+.menu-1 > ul {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 0 20px;
+}
+.menu-1 > ul > li {
+  display: inline-block;
+}
+.menu-1 ul > li {
+  position: relative;
+}
+.menu-1 ul > li > a {
+  display:block;
+  padding: 20px;
+  white-space: nowrap;
+  width: 150px;
+}
+.menu-1 ul > li > a {
+  
+} 
+.menu-1 ul li:hover > a {
+  color: white;
+  background-color: black;
+}
+.menu-1 > ul ul {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+.menu-1 ul > li:hover > ul {
+  display: block;
+}
+.member {
+  margin: 0;
+  margin-left: 20px;
+  padding: 0;
+  width: 60px;
+  text-align: center;
+  display: inline-block;
+  height: 61px;
+  position: absolute;
+}
+.member a {
+  display: block;
+  padding: 2px;
+  width: 50px;
+  background-color: black;
+  color: white;
+  border: 2px solid #aaaaaa;
+  font-size: .7rem;
+}
+.member > login > a {
+  margin-bottom: 15px;
+}
+.boards > .mpa-board {
+  display: inline-block;
+  background-color: #FEC0E1;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  position: absolute;
+  left: 20%;
+  top: 10%;
+  height: 600px;
+  width: 140px;
+}
+.boards > .mpa-board > h1 {
+  text-align: center;
+  margin-top: 75%;
+  margin-bottom: auto;
+  font-size: 3.5rem;
+}
+.boards > .mpa-board > .mpa-articles {
+  background-color: #FEC0E1;
+  position: absolute;
+  left: 2000px;
+  top: 0;
+  width: 2000px;
+  height: 600px;
+  transition: left 1s;
+  z-index: 1;
+}
+.boards > .mpa-board:hover > .mpa-articles {
+  left: 100%;
+}
+
+.boards > .mpa-board > .mpa-articles > box {
+  display: block;
+  background-color: #FF9FD2;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 540px;
+  width: 800px;
+}
+.boards box > article {
+  padding: 0;
+  margin: 0;
+  display: block;
+  background-color: white;
+}
+.boards box > head {
+  padding: 0;
+  margin: 0;
+  display: block;
+  background-color: white;
+}
+.boards box > head > span {
+  font-weight: bold;
+}
+.boards box article > span {
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+}
+.boards box head > span:nth-child(1) {
+  width: 6%;
+}
+.boards box head > span:nth-child(2) {
+  width: 75%;
+  text-align: left;
+  padding-left: 10px;
+}
+.boards box head > span:nth-child(3) {
+  width: 10%;
+}
+.boards box head > span:nth-child(1) {
+  width: 6%;
+}
+.boards box article > span:nth-child(2) {
+  width: 75%;
+  text-align: left;
+  padding-left: 10px;
+}
+.boards box article > span:nth-child(3) {
+  width: 10%;
+}
+.boards > .lastest-board {
+  display: inline-block;
+  background-color: #A9E2F3;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  position: absolute;
+  right: 20%;
+  top: 10%;
+  height: 600px;
+  width: 140px;
+  z-index: 0;
+}
+.boards > .lastest-board > h1 {
+  text-align: center;
+  margin-top: 75%;
+  margin-bottom: auto;
+  font-size: 3.5rem;
+}
+.boards > .lastest-board > .lastest-articles {
+  background-color: #A9E2F3;
+  position: absolute;
+  right: 2000px;
+  top: 0;
+  width: 2000px;
+  height: 600px;
+  transition: right 1s;
+}
+.boards > .lastest-board:hover > .lastest-articles {
+  right: 100%;
+}
+
+.boards > .lastest-board > .lastest-articles > box {
+  display: block;
+  position: absolute;
+  background-color: #81BEF7;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 540px;
+  width: 800px;
+  right: 0;
+  
+}
+.mpa-articles > box > head {
+  padding: 10%;
+  margin: 10%;
+}
+
+.total-board {
+  background-color: #CEECF5;
+  border-radius: 10px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 8px;
+}
+.total-board > .board-name-1 {
+  display: block;
+}
+.total-board > .board-name-1 > h3 {
+  padding:0;
+  margin:3px;
+  text-align: center;
+}
+.total-board > .board-name-1 > subject {
+  padding:0;
+  margin: 3px;
+  font-weight: bold;
+}
+.total-board > .board-name-1 > subject > list > tx:nth-child(3) {
+  width: 56%;
+}
+.total-board > .board-name-1 > subject > list > tx:nth-child(6) {
+  width: 16%;
+}
+.total-board > .articles {
+  margin-top: 7px;
+  padding: 0 5px;
+}
+.total-board > .articles > list {
+  display: block;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.total-board list > tx {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+.total-board list > tx:nth-child(1) {
+  width: 5%;
+}
+.total-board list > tx:nth-child(2) {
+ width: 5%;
+}
+.total-board list > tx:nth-child(3) {
+  width: 57%;
+  text-align: left;
+  padding: 0 8px;
+}
+.total-board list > tx:nth-child(4) {
+  width: 6%;
+}
+.total-board list > tx:nth-child(5) {
+  width: 6%;
+}
+.total-board list > tx:nth-child(6) {
+  width: 17%;
+}
+.total-board > .articles > list:nth-child(even) {
+  background-color: #CEECF5;
+}
+.total-board > .articles > list:nth-child(odd) {
+  background-color: #A9E2F3;
+}
+   </style>
 </head>
 <body>
+  <div class="menu-1">
+    <ul>
+      <li>
+        <a href="file:///C:/work/sts-4.4.0.RELEASE-workspace/java-ssg/site/home/index.html">홈</a>
+      </li>
+      <li>
+        <a href="#">게시판</a>
+        <ul>
+          <li><a href="C:/work/sts-4.4.0.RELEASE-workspace/java-ssg/site/article/notice-list-1.html">공지사항</a></li>
+          <li><a href="C:/work/sts-4.4.0.RELEASE-workspace/java-ssg/site/article/free-list-1.html">자유게시판</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">개발자 블로그</a>
+      </li>
+      <li>
+        <a href="#">통계</a>
+      </li>
+    </ul>
+    <div class="member">
+      <login><a href="" herf="#">로그인</a></login>
+      <logout><a href="" herf="#">로그아웃</a></logout>
+    </div>
+  </div>

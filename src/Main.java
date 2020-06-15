@@ -1,3 +1,4 @@
+
 //조장 메세지
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -8,6 +9,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -583,11 +585,28 @@ class BuildService {
 
 		String head = Util.getFileContents("site_template/part/head.html");
 		String foot = Util.getFileContents("site_template/part/foot.html");
+		String template = Util.getFileContents("site_template/article/home_template.html");
+		String template1 = Util.getFileContents("site_template/article/article_template.html");
 
 		// 홈(index.html)
-		html = "";
 
-		html += "<div>" + "</div>";
+		html = "";
+		List<Article> articles10 = articleService.getArticles();
+
+		for (Article article : articles10) {
+//			html += "<div class=\"home_page\">";
+//			html += "<div>번호: " + article.getId() + "</div>";
+//			html += "<div>날짜: " + article.getRegDate() + "</div>";
+//			html += "<div>제목: " + article.getTitle() + "</div>";
+//			html += "<div>내용: " + article.getBody() + "</div>";
+//			html += "<div>조회수: " + article.getViews() + "</div>";
+			
+			html += "<span>" + article.getBoardId() + "</span>|";
+			html += "<span>" + article.getTitle() + "</span>|";
+			html += "<span>" + article.getMemberId() + "</span><br><hr>";
+
+		}
+		html = template.replace("${TR}", html);
 		html = head + html + foot;
 		Util.writeFileContents("site/home/" + "index.html", html);
 
@@ -617,10 +636,10 @@ class BuildService {
 		Util.writeFileContents("site/stat/" + "index.html", html);
 
 		// 전체 게시물(list.html)
-		
+
 		html = "";
 		List<Article> articles1 = articleService.getArticles();
-		String template = Util.getFileContents("site_template/article/test.html");
+
 		for (Article article : articles1) {
 			html += "<div>";
 			html += "<div>번호: " + article.getId() + "</div>";
@@ -628,9 +647,9 @@ class BuildService {
 			html += "<div>제목: " + article.getTitle() + "</div>";
 			html += "<div>내용: " + article.getBody() + "</div>";
 			html += "<div>조회수: " + article.getViews() + "</div>";
-			
-			html = template.replace("${TR}", html);
-			
+
+//			html = template.replace("${TR}", html);
+
 			html = head + html + foot;
 
 			Util.writeFileContents("site/article/" + "list.html", html);
@@ -645,11 +664,11 @@ class BuildService {
 			html += "<div>날짜: " + board.getRegDate() + "</div>";
 			html += "<div>게시판 이름: " + board.getName() + "</div>";
 			html += "<div>게시판 코드: " + board.getCode() + "</div>";
-
-			html = head + html + foot;
-
-			Util.writeFileContents("site/article/" + "boardList.html", html);
 		}
+		html = head + html + foot;
+
+		Util.writeFileContents("site/article/" + "boardList.html", html);
+
 		// 게시판별 게시물 리스트
 		List<Board> boards5 = articleService.getBoards();
 
@@ -661,18 +680,19 @@ class BuildService {
 			List<Article> articles = articleService.getArticlesByBoardCode(board.getCode());
 
 			for (Article article : articles) {
-				html += "<div>";
-				html += "<div>번호: " + article.getId() + "</div>";
-				html += "<div>날짜: " + article.getRegDate() + "</div>";
-				html += "<div>제목: <a href=\"" + article.getId() + ".html\">" + article.getTitle() + "</a></div>";
-				html += "</tr>";
+				html += "" + article.getBoardId() + "</tx>|";
+				html += "" + article.getId() + "</tx>|";
+				html += "<tx><a href=\"" + article.getId() + ".html\">" + article.getTitle() + "</a></tx>|";
+				html += "<tx>" + article.getBody() + "</tx>|";					
+				html += "<tx>" + article.getViews() + "</tx>|";
+				html += "<tx>" + article.getRegDate() + "</tx><br><hr>";		
 			}
-
-			html = head + html + foot;
-
-			Util.writeFileContents("site/article/" + fileName, html);
+		
+		html = template1.replace("${TT}", html);
+		html = head + html + foot;
+		
+		Util.writeFileContents("site/article/" + fileName, html);
 		}
-
 		// 게시물별 파일생성(#.html)
 		List<Article> articles = articleService.getArticles();
 
